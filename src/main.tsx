@@ -14,29 +14,8 @@ const client = new ApolloClient({
   cache: new InMemoryCache(),
 });
 
-client
-  .query({
-    query: gql`
-      query MyQuery($id: ID!) {
-        WorkItemLogById(id: $id) {
-          id
-          date
-          department
-          actualLengthOfTime
-          author
-          estimatedLengthOfTime
-          workType
-        }
-      }
-    `,
-    variables: { 
-      id: "01"
-    }
-  })
-  .then((result) => console.log(result));
-
 ReactDOM.createRoot(document.getElementById("root")!).render(
-  <React.StrictMode>
+  <ApolloProvider client={client}>
     <App />
-  </React.StrictMode>
+    </ApolloProvider>
 );

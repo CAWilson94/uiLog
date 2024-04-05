@@ -7,3 +7,10 @@ export interface workLogItemI {
     workType: string;
   }
   
+  export interface WorkItemCardI { 
+    title: string;
+    description: string;
+    meeting: string; // TODO: we change to type later
+    department: string; 
+    time: string;
+  }

@@ -1,11 +1,10 @@
+import { AllWorkItemLogs } from "./AllWorkItemLogs";
 import "./App.css";
-import { WorkLogItem } from "./WorkLogItem";
 
 function App() {
   return (
     <div>
-      <br />
-      <WorkLogItem/>
+      <AllWorkItemLogs/>
     </div>
   );
 }
